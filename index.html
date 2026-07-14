@@ -3,74 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-<meta name="theme-color" content="#061016">
+<meta name="theme-color" content="#050a12">
 <title>AURORA: Hidden Queendom — Fan Game</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
-<canvas id="sky"></canvas><div class="aurora"></div><div class="forest"></div>
+<canvas id="sky"></canvas>
+<div class="aurora aurora-a"></div><div class="aurora aurora-b"></div>
+<div class="mountains"></div><div class="fog"></div>
 
 <div class="splash" id="splash">
-  <div class="splash-card">
-    <div class="splash-orb"></div>
-    <h2>Entra al <span class="glow">Hidden Queendom</span></h2>
-    <p>Un fan game para teléfono, con música ambiental y sonidos originales generados dentro del navegador.</p>
-    <button class="primary" id="enter">Entrar al bosque</button>
-    <div class="audio-note">El primer toque activa el audio en iPhone y Android.</div>
-  </div>
+  <div class="splash-mark"><span></span><i></i></div>
+  <p class="overline">A FAN-MADE NORDIC FANTASY</p>
+  <h1>HIDDEN<br><em>QUEENDOM</em></h1>
+  <p class="splash-copy">Un viaje de luz, bosque y sonido creado para jugar con los dedos.</p>
+  <button class="enter-button" id="enter"><b>ENTRAR AL BOSQUE</b><span>Activa música y efectos</span></button>
+  <small>No contiene canciones, letras ni fotografías oficiales.</small>
 </div>
 
 <main class="shell">
   <header class="top">
-    <div class="logo"><small>Fan game inspirado en AURORA</small><strong>AURORA: Hidden Queendom</strong></div>
-    <button class="icon-btn" id="audioBtn" aria-label="Audio">🔊</button>
+    <div class="logo"><span class="logo-rune">ᛉ</span><div><small>THE HIDDEN</small><strong>QUEENDOM</strong></div></div>
+    <button class="icon-btn" id="audioBtn" aria-label="Audio">◖</button>
   </header>
 
   <section class="hero">
-    <span class="badge">🌌 Seis pruebas para una sola alma</span>
-    <h1>Despierta la <span class="glow">luz salvaje</span></h1>
-    <p>Corre con un espíritu, teje constelaciones, escucha al lobo, guía polillas lunares y haz crecer un árbol musical.</p>
-    <div class="whisper">“El bosque no está en silencio. Solo espera que aprendas a escucharlo.”</div>
+    <div class="hero-moon"></div><div class="hero-raven">⌁</div>
+    <p class="chapter-label">CAPÍTULO CERO · EL DESPERTAR</p>
+    <h2>La naturaleza<br><em>recuerda tu nombre.</em></h2>
+    <p class="hero-copy">Domina seis pruebas con combos, poderes, fases y dificultad creciente. Cada récord alimenta el árbol del Queendom.</p>
+    <div class="hero-actions"><span>DESLIZA PARA EXPLORAR</span><i>↓</i></div>
   </section>
 
   <section class="stats">
-    <div class="stat"><b id="total">0</b><span>Luz total</span></div>
+    <div class="stat"><b id="total">0</b><span>Luz reunida</span></div>
     <div class="stat"><b id="played">0</b><span>Viajes</span></div>
-    <div class="stat"><b id="crown">—</b><span>Favorito</span></div>
+    <div class="stat"><b id="crown">—</b><span>Camino favorito</span></div>
   </section>
 
-  <div class="section-head"><h2>Pruebas del bosque</h2><span>toca para entrar</span></div>
-  <section class="games">
-    <button class="card" data-game="runner"><span class="record" id="rec-runner">0</span><span class="emoji">🐺</span><b>Runaway Spirit</b><small>Salta espinas y recoge almas de luz.</small></button>
-    <button class="card" data-game="weaver"><span class="record" id="rec-weaver">0</span><span class="emoji">✦</span><b>Aurora Weaver</b><small>Dibuja constelaciones antes de que se desvanezcan.</small></button>
-    <button class="card" data-game="wolf"><span class="record" id="rec-wolf">0</span><span class="emoji">🌲</span><b>Whispering Wolf</b><small>Escucha el tono y elige el camino seguro.</small></button>
-    <button class="card" data-game="moths"><span class="record" id="rec-moths">0</span><span class="emoji">🦋</span><b>Moon Moths</b><small>Guía una bandada entre flores y sombras.</small></button>
-    <button class="card" data-game="seed"><span class="record" id="rec-seed">0</span><span class="emoji">🌱</span><b>The Seed Sings</b><small>Repite ecos musicales y haz crecer el árbol.</small></button>
-    <button class="card" data-game="storm"><span class="record" id="rec-storm">0</span><span class="emoji">🌧️</span><b>Dance in the Storm</b><small>Desliza para esquivar lluvia y atrapar relámpagos.</small></button>
+  <div class="section-head"><div><small>EL MAPA DEL BOSQUE</small><h3>Seis caminos</h3></div><span>Todos abiertos</span></div>
+
+  <section class="journey">
+    <button class="chapter card-runner" data-game="runner">
+      <div class="chapter-art"><span class="moon-art"></span><i class="spirit-art">●</i><b class="trees-art"></b></div>
+      <div class="chapter-number">01</div><div class="record" id="rec-runner">Récord 0</div>
+      <div class="chapter-copy"><small>ACCIÓN · SUPERVIVENCIA</small><h4>Runaway Spirit</h4><p>Corre por tres mundos, domina doble salto y dash, rompe el portal de sombra.</p><div class="tags"><span>3 fases</span><span>poderes</span><span>jefe</span></div></div>
+    </button>
+
+    <button class="chapter card-weaver" data-game="weaver">
+      <div class="chapter-art"><span class="constellation-art">✦ · ✧ · ✦<br> · ✦ · </span></div>
+      <div class="chapter-number">02</div><div class="record" id="rec-weaver">Récord 0</div>
+      <div class="chapter-copy"><small>DESTREZA · MEMORIA</small><h4>Aurora Weaver</h4><p>Memoriza constelaciones vivas y dibújalas mientras el cielo se mueve.</p><div class="tags"><span>precisión</span><span>combo</span><span>riesgo</span></div></div>
+    </button>
+
+    <button class="chapter card-wolf" data-game="wolf">
+      <div class="chapter-art"><span class="wolf-art">◢</span><i class="eye-art"></i></div>
+      <div class="chapter-number">03</div><div class="record" id="rec-wolf">Récord 0</div>
+      <div class="chapter-copy"><small>SONIDO · DEDUCCIÓN</small><h4>Whispering Wolf</h4><p>Descifra melodías, repite secuencias y escapa antes de que el lobo despierte.</p><div class="tags"><span>audio</span><span>memoria</span><span>tensión</span></div></div>
+    </button>
+
+    <button class="chapter card-moths" data-game="moths">
+      <div class="chapter-art"><span class="moth-art">⋈</span><i class="flower-art">✾</i></div>
+      <div class="chapter-number">04</div><div class="record" id="rec-moths">Récord 0</div>
+      <div class="chapter-copy"><small>CONTROL · ESTRATEGIA</small><h4>Moon Moths</h4><p>Protege una bandada, crea cadenas de néctar y sobrevive a corrientes oscuras.</p><div class="tags"><span>bandada</span><span>viento</span><span>combo</span></div></div>
+    </button>
+
+    <button class="chapter card-seed" data-game="seed">
+      <div class="chapter-art"><span class="seed-art">⌇</span><i class="roots-art"></i></div>
+      <div class="chapter-number">05</div><div class="record" id="rec-seed">Récord 0</div>
+      <div class="chapter-copy"><small>RITMO · CRECIMIENTO</small><h4>The Seed Sings</h4><p>Repite melodías con ritmo perfecto y haz crecer un árbol diferente cada vez.</p><div class="tags"><span>ritmo</span><span>melodía</span><span>perfect</span></div></div>
+    </button>
+
+    <button class="chapter card-storm" data-game="storm">
+      <div class="chapter-art"><span class="storm-art">ϟ</span><i class="rain-art"></i></div>
+      <div class="chapter-number">06</div><div class="record" id="rec-storm">Récord 0</div>
+      <div class="chapter-copy"><small>ARCADE · VELOCIDAD</small><h4>Dance in the Storm</h4><p>Cambia de carril, carga tu escudo y desata una explosión de luz en la tormenta.</p><div class="tags"><span>oleadas</span><span>escudo</span><span>furia</span></div></div>
+    </button>
   </section>
 
-  <footer class="footer">Música y efectos originales generados con Web Audio.<br>No contiene canciones, letras ni fotografías oficiales.</footer>
+  <footer class="footer"><b>FAN GAME NO OFICIAL</b><br>Música y efectos originales generados en tu teléfono.</footer>
 </main>
 
 <section class="full" id="gameScreen">
   <div class="game-wrap">
-    <div class="gamebar">
-      <button class="back" id="back">←</button>
-      <div class="gname"><b id="gameName"></b><small id="gameSub"></small></div>
-      <div class="live">✦ <span id="live">0</span></div>
-    </div>
+    <div class="gamebar"><button class="back" id="back">←</button><div class="gname"><small id="gameSub"></small><b id="gameName"></b></div><div class="live"><small>LUZ</small><span id="live">0</span></div></div>
     <div id="gameBox"></div>
   </div>
 </section>
 
-<div class="result" id="result">
-  <div class="result-card">
-    <div class="trophy" id="rIcon">🌟</div><h3 id="rTitle"></h3><p id="rText"></p>
-    <div class="points"><span id="rPoints">0</span> ✦</div>
-    <div class="row"><button class="secondary" id="rHome">Menú</button><button class="primary" id="rRetry">Otra vez</button></div>
-  </div>
-</div>
-<script src="core.js"></script>
-<script src="games.js"></script>
+<div class="result" id="result"><div class="result-card"><div class="result-rays"></div><div class="trophy" id="rIcon">✦</div><small>EL BOSQUE TE RECONOCE</small><h3 id="rTitle"></h3><p id="rText"></p><div class="points"><span id="rPoints">0</span><small>LUZ</small></div><div class="row"><button class="secondary" id="rHome">Mapa</button><button class="primary" id="rRetry">Repetir</button></div></div></div>
+<script src="core.js?v=3"></script><script src="games.js?v=3"></script>
 </body>
 </html>
