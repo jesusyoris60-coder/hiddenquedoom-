@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#061016">
+<title>AURORA: Hidden Queendom — Fan Game</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="sky"></canvas><div class="aurora"></div><div class="forest"></div>
+
+<div class="splash" id="splash">
+  <div class="splash-card">
+    <div class="splash-orb"></div>
+    <h2>Entra al <span class="glow">Hidden Queendom</span></h2>
+    <p>Un fan game para teléfono, con música ambiental y sonidos originales generados dentro del navegador.</p>
+    <button class="primary" id="enter">Entrar al bosque</button>
+    <div class="audio-note">El primer toque activa el audio en iPhone y Android.</div>
+  </div>
+</div>
+
+<main class="shell">
+  <header class="top">
+    <div class="logo"><small>Fan game inspirado en AURORA</small><strong>AURORA: Hidden Queendom</strong></div>
+    <button class="icon-btn" id="audioBtn" aria-label="Audio">🔊</button>
+  </header>
+
+  <section class="hero">
+    <span class="badge">🌌 Seis pruebas para una sola alma</span>
+    <h1>Despierta la <span class="glow">luz salvaje</span></h1>
+    <p>Corre con un espíritu, teje constelaciones, escucha al lobo, guía polillas lunares y haz crecer un árbol musical.</p>
+    <div class="whisper">“El bosque no está en silencio. Solo espera que aprendas a escucharlo.”</div>
+  </section>
+
+  <section class="stats">
+    <div class="stat"><b id="total">0</b><span>Luz total</span></div>
+    <div class="stat"><b id="played">0</b><span>Viajes</span></div>
+    <div class="stat"><b id="crown">—</b><span>Favorito</span></div>
+  </section>
+
+  <div class="section-head"><h2>Pruebas del bosque</h2><span>toca para entrar</span></div>
+  <section class="games">
+    <button class="card" data-game="runner"><span class="record" id="rec-runner">0</span><span class="emoji">🐺</span><b>Runaway Spirit</b><small>Salta espinas y recoge almas de luz.</small></button>
+    <button class="card" data-game="weaver"><span class="record" id="rec-weaver">0</span><span class="emoji">✦</span><b>Aurora Weaver</b><small>Dibuja constelaciones antes de que se desvanezcan.</small></button>
+    <button class="card" data-game="wolf"><span class="record" id="rec-wolf">0</span><span class="emoji">🌲</span><b>Whispering Wolf</b><small>Escucha el tono y elige el camino seguro.</small></button>
+    <button class="card" data-game="moths"><span class="record" id="rec-moths">0</span><span class="emoji">🦋</span><b>Moon Moths</b><small>Guía una bandada entre flores y sombras.</small></button>
+    <button class="card" data-game="seed"><span class="record" id="rec-seed">0</span><span class="emoji">🌱</span><b>The Seed Sings</b><small>Repite ecos musicales y haz crecer el árbol.</small></button>
+    <button class="card" data-game="storm"><span class="record" id="rec-storm">0</span><span class="emoji">🌧️</span><b>Dance in the Storm</b><small>Desliza para esquivar lluvia y atrapar relámpagos.</small></button>
+  </section>
+
+  <footer class="footer">Música y efectos originales generados con Web Audio.<br>No contiene canciones, letras ni fotografías oficiales.</footer>
+</main>
+
+<section class="full" id="gameScreen">
+  <div class="game-wrap">
+    <div class="gamebar">
+      <button class="back" id="back">←</button>
+      <div class="gname"><b id="gameName"></b><small id="gameSub"></small></div>
+      <div class="live">✦ <span id="live">0</span></div>
+    </div>
+    <div id="gameBox"></div>
+  </div>
+</section>
+
+<div class="result" id="result">
+  <div class="result-card">
+    <div class="trophy" id="rIcon">🌟</div><h3 id="rTitle"></h3><p id="rText"></p>
+    <div class="points"><span id="rPoints">0</span> ✦</div>
+    <div class="row"><button class="secondary" id="rHome">Menú</button><button class="primary" id="rRetry">Otra vez</button></div>
+  </div>
+</div>
+<script src="core.js"></script>
+<script src="games.js"></script>
+</body>
+</html>
